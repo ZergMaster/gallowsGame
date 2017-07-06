@@ -1,6 +1,5 @@
 <project name="GallowsGame">
-    <property file="developer.properties"/>
-    <property file="${DEVELOPER_PROPERTIES_FILE_NAME}"/>
+    <property file="viktor.properties"/>
 
     <property name="TARGET_PLAYER" value="22.0"/>
     <property name="SWF_VERSION" value="22"/>

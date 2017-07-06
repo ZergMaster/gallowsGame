@@ -13,6 +13,7 @@ public class Words
 		if(!_wordsTemp.length)
 			wordsTemp = WORDS;
 
+		trace(_wordsTemp);
 		_randIndex = Math.random()*_wordsTemp.length;
 		return _wordsTemp[_randIndex];
 	}

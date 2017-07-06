@@ -74,8 +74,6 @@ public class Game extends Sprite
 		GameScores.loses++;
 		GameSound.playLoseSound();
 
-		Words.removeWord();
-
 		addChild(new StartGameButton(startNewRound));
 	}
 }

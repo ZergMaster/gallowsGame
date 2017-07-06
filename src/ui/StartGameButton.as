@@ -30,8 +30,7 @@ public class StartGameButton extends Sprite
 	private function clickHandler(event:MouseEvent):void
 	{
 		removeEventListener(MouseEvent.CLICK, clickHandler);
-		
-		GameSound.playClickSound();
+
 		_callback()
 	}
 }

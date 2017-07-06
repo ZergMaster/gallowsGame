@@ -15,7 +15,7 @@ public class GameStats extends Sprite
 
 	public function GameStats()
 	{
-		_statText = TextFieldFactory.getTextFieldSmall('ничего', 160, 30, 78, 424, 0xffffff, true);
+		_statText = TextFieldFactory.getArialTextField('ничего', 160, 30, 78, 424, 12, 0xffffff, true);
 		addChild(_statText);
 
 		wins = 0;

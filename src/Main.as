@@ -18,7 +18,7 @@ public class Main extends Sprite
 	{
 		addChild(new Background());
 
-		addChild(TextFieldFactory.getTextFieldBigBold(Content.gameName, 250, 30, 12, 10));
+		addChild(TextFieldFactory.getArialTextField(Content.gameName, 250, 30, 12, 10, 24, 0xffffff));
 
 		addChild(new GameDescription(startGameHandler));
 

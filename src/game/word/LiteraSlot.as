@@ -33,10 +33,13 @@ public class LiteraSlot extends Sprite
 
 	public function openSlot():void
 	{
-		var tf:TextField = TextFieldFactory.getTextFieldBigBold(_value, 24, 30, 0, 0);
-		addChild(tf);
+		if(!opened)
+		{
+			var tf:TextField = TextFieldFactory.getArialTextField(_value, 24, 33, 0, 4, 18, 0xffffff, true, 'center');
+			addChild(tf);
 
-		_opened = true;
+			_opened = true;
+		}
 	}
 
 	public function get value():String

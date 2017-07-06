@@ -2,6 +2,7 @@ package game.word
 {
 
 import flash.display.Sprite;
+import flash.events.Event;
 
 public class WordFinder extends Sprite
 {
@@ -10,17 +11,38 @@ public class WordFinder extends Sprite
 
 	public function WordFinder()
 	{
-		_word = Words.randomWord;
+		addEventListener(Event.ADDED_TO_STAGE, addThis);
+	}
 
+	private function addThis(event:Event):void
+	{
+		newWord();
+	}
+
+	public function newWord():void
+	{
+		_word = Words.randomWord;
+		trace('_word = '+_word);
 		makeSlots();
 	}
 
 	private function makeSlots():void
 	{
-		_literaSlots = new Vector.<LiteraSlot>();
-		var gap:int;
 		var i:int;
+		var gap:int;
 		var wordLength:uint = _word.length;
+
+		if(_literaSlots)
+		{
+			for(i = _literaSlots.length-1; i >= 0; i--)
+			{
+				removeChild(_literaSlots[i]);
+				_literaSlots.removeAt(i);
+			}
+		}
+
+		_literaSlots = new Vector.<LiteraSlot>();
+
 		for(i = 0; i < wordLength; i++)
 		{
 			var literaSlot:LiteraSlot = new LiteraSlot(_word.charAt(i));

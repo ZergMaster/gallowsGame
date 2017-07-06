@@ -3,31 +3,31 @@ package game.word
 
 public class Words
 {
-	private static const WORD:Array = ['ОДИН', 'ДВА', 'ТРИ', 'ДВАДЦАТЬ', 'ЛОПАТА'];
-	private static var _wordTemp:Array = [];
+	private static const WORDS:Array = ['ОДИН', 'ДВА', 'ТРИ', 'ДВАДЦАТЬ', 'ЛОПАТА'];
+	private static var _wordsTemp:Array = [];
 
 	private static var _randIndex:uint;
 
 	public static function get randomWord():String
 	{
-		if(!_wordTemp.length)
-			wordTemp = WORD;
+		if(!_wordsTemp.length)
+			wordsTemp = WORDS;
 
-		_randIndex = Math.random()*_wordTemp.length;
-		return _wordTemp[_randIndex];
+		_randIndex = Math.random()*_wordsTemp.length;
+		return _wordsTemp[_randIndex];
 	}
 
 	public static function removeWord():void
 	{
-		_wordTemp.removeAt(_randIndex);
+		_wordsTemp.removeAt(_randIndex);
 	}
 
-	public static function set wordTemp(value:Array):void
+	public static function set wordsTemp(value:Array):void
 	{
-		_wordTemp = [];
+		_wordsTemp = [];
 		for(var i:int = 0; i < value.length; i++)
 		{
-			_wordTemp.push(value[i]);
+			_wordsTemp.push(value[i]);
 		}
 	}
 }

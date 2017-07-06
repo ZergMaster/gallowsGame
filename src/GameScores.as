@@ -6,14 +6,14 @@ import flash.text.TextField;
 
 import ui.TextFieldFactory;
 
-public class GameStats extends Sprite
+public class GameScores extends Sprite
 {
 	private static var _wins:int;
 	private static var _loses:int;
 
 	private static var _statText:TextField;
 
-	public function GameStats()
+	public function GameScores()
 	{
 		_statText = TextFieldFactory.getArialTextField('ничего', 160, 30, 78, 424, 12, 0xffffff, true);
 		addChild(_statText);

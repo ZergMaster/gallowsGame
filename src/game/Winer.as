@@ -19,7 +19,7 @@ public class Winer extends Sprite
 	{
 		_callback = callback;
 
-		GameStats.wins++;
+		GameScores.wins++;
 		GameSound.playWinSound();
 		Words.removeWord();
 

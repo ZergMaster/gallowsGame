@@ -29,7 +29,7 @@ public class Main extends Sprite
 
 	private function startGameHandler():void
 	{
-		addChild(new GameStats());
+		addChild(new GameScores());
 		_gameContainer.addChild(new Game());
 	}
 

@@ -13,11 +13,11 @@ public class GameDescription extends Sprite
 {
 	private static const GAP:int = 15;
 
-	private var _startGameHandler:Function;
+	private var _startGameCallback:Function;
 
-	public function GameDescription(startGameHandler:Function)
+	public function GameDescription(startGameCallback:Function)
 	{
-		_startGameHandler = startGameHandler;
+		_startGameCallback = startGameCallback;
 
 		var bg:DescriptionFon = new DescriptionFon();
 		addChild(bg);
@@ -25,12 +25,12 @@ public class GameDescription extends Sprite
 		addChild(TextFieldFactory.getArialTextField(Content.description, bg.width-GAP*2, bg.height-GAP*2, bg.x+GAP,
 													bg.y+GAP, 12, 0, false, TextFormatAlign.JUSTIFY));
 
-		addChild(new StartGameButton(startGame));
+		addChild(new StartGameButton(startGameHandler));
 	}
 
-	private function startGame():void
+	private function startGameHandler():void
 	{
-		_startGameHandler();
+		_startGameCallback();
 
 		this.parent.removeChild(this);
 	}

@@ -5,20 +5,20 @@ import flash.events.Event;
 
 public class GameEvent extends Event
 {
-	public static const END_ROUND:String = 'endRound';
-	
-	private var _isWin:Boolean;
-	
-	public function GameEvent(type:String, isWin:Boolean)
+	public static const CLICK_KEYBOARD:String = 'clickVirtKeyBoard1';
+
+	private var _value:String;
+
+	public function GameEvent(type:String, value:String)
 	{
 		super(type, false, false);
 
-		_isWin = isWin;
+		_value = value;
 	}
 
-	public function get isWin():Boolean
+	public function get value():String
 	{
-		return _isWin;
+		return _value;
 	}
 }
 }

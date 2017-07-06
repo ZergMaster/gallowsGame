@@ -16,7 +16,7 @@ public class StartGameButton extends Sprite
 	public function StartGameButton(callback:Function)
 	{
 		_callback = callback;
-		
+
 		addChild(butt);
 		useHandCursor = true;
 		buttonMode = true;
@@ -29,6 +29,8 @@ public class StartGameButton extends Sprite
 
 	private function clickHandler(event:MouseEvent):void
 	{
+		this.parent.removeChild(this);
+		
 		removeEventListener(MouseEvent.CLICK, clickHandler);
 
 		_callback()

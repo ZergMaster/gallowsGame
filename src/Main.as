@@ -30,8 +30,8 @@ public class Main extends Sprite
 	private function startGameHandler():void
 	{
 		addChild(new GameScores());
+		
 		_gameContainer.addChild(new Game());
 	}
-
 }
 }

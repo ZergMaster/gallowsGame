@@ -4,7 +4,9 @@ package game.keyboard
 import flash.display.Sprite;
 import flash.events.MouseEvent;
 
+import game.Game;
 import game.events.GameEvent;
+import game.gallows.Gallows;
 import game.word.WordFinder;
 
 public class VirtKeyboard extends Sprite
@@ -26,11 +28,19 @@ public class VirtKeyboard extends Sprite
 
 		GameSound.playClickSound();
 
+		dispatchEvent(new GameEvent(GameEvent.CLICK_KEYBOARD, target.value));
+/*
 		if(!WordFinder.isLiteraInTheWord(target.value))
-			trace('gallows ++');
+		{
+			if((Gallows.isGallowsComplete()))
+				dispatchEvent(new GameEvent(GameEvent.CLICK_KEYBOARD, false));
+			else
+				Game.gallows.addElement();
+		}
 
 		if(WordFinder.wordIsFound())
-			dispatchEvent(new GameEvent(GameEvent.END_ROUND, true));
+			dispatchEvent(new GameEvent(GameEvent.CLICK_KEYBOARD, true));
+			*/
 	}
 
 	private function setKeyBoard():void

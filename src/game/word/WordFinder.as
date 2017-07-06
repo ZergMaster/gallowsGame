@@ -6,8 +6,8 @@ import flash.events.Event;
 
 public class WordFinder extends Sprite
 {
-	private static var _word:String;
-	private static var _literaSlots:Vector.<LiteraSlot>;
+	private var _word:String;
+	private var _literaSlots:Vector.<LiteraSlot>;
 
 	public function WordFinder()
 	{
@@ -55,7 +55,7 @@ public class WordFinder extends Sprite
 		}
 	}
 
-	public static function isLiteraInTheWord(litera:String):Boolean
+	public function isLiteraInTheWord(litera:String):Boolean
 	{
 		var result:Boolean = false;
 
@@ -73,7 +73,7 @@ public class WordFinder extends Sprite
 		return result;
 	}
 
-	public static function wordIsFound():Boolean
+	public function wordIsFound():Boolean
 	{
 		var i:int;
 		var wordLength:uint = _word.length;
